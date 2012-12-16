@@ -37,7 +37,7 @@ public class RiigiAdminYksuseLiikDAO {
 	public String getKommentaar() {
 		return kommentaar;
 	}
-	public void setKommentaar(String kommentraar) {
+	public void setKommentaar(String kommentaar) {
 		this.kommentaar = kommentaar;
 	}
 	public Date getAlates() {

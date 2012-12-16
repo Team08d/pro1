@@ -29,4 +29,14 @@
     <servlet-name>SetupDatabase</servlet-name>
     <url-pattern>/SetupDatabase</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>YksuseLiik</display-name>
+    <servlet-name>YksuseLiik</servlet-name>
+    <servlet-class>test.YksuseLiik</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>YksuseLiik</servlet-name>
+    <url-pattern>/YksuseLiik</url-pattern>
+  </servlet-mapping>
 </web-app>
