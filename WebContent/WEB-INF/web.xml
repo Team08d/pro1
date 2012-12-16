@@ -39,4 +39,14 @@
     <servlet-name>YksuseLiik</servlet-name>
     <url-pattern>/YksuseLiik</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description/>
+    <display-name>AlluvusRaport</display-name>
+    <servlet-name>AlluvusRaport</servlet-name>
+    <servlet-class>test.AlluvusRaport</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AlluvusRaport</servlet-name>
+    <url-pattern>/AlluvusRaport</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -18,7 +18,7 @@ import org.apache.commons.dbutils.DbUtils;
 public class YksuseLiik extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private String db_path = "c:/java_i377_prax/mem_database/prax3"; 
+	private String db_path = "jdbc:hsqldb:file:${user.home}/i377/Team08d/db;shutdown=true"; 
 
 	public void init() throws ServletException {
 		try {
@@ -53,7 +53,7 @@ public class YksuseLiik extends HttpServlet {
 
 	private RiigiAdminYksuseLiikDAO getYksuseLiikById(Long yksuseLiikId) throws SQLException {
 		
-		Connection conn = DriverManager.getConnection("jdbc:hsqldb:" + db_path + ";shutdown=true");
+		Connection conn = DriverManager.getConnection(db_path);
 
 		PreparedStatement ps = null;
 		ResultSet rset = null;

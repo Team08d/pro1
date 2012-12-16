@@ -20,7 +20,7 @@ import org.apache.commons.dbutils.DbUtils;
 public class Hello extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private String db_path = "c:/java_i377_prax/mem_database/prax3"; 
+	private String db_path = "jdbc:hsqldb:file:${user.home}/i377/Team08d/db;shutdown=true"; 
 
 	public void init() throws ServletException {
 		try {
@@ -43,6 +43,7 @@ public class Hello extends HttpServlet {
 			}
 		} catch (SQLException e) {
 			response.getWriter().print("Viga: getRiigiAdminYksuseLiikDAOs");
+			System.out.println(e);
 		}
 	}
 
@@ -51,7 +52,7 @@ public class Hello extends HttpServlet {
 		List<AdminAlluvusDAO> adminAlluvusDAOs = new ArrayList<AdminAlluvusDAO>();
 		List<RiigiAdminYksuseLiikDAO> riigiAdminYksuseLiikDAOs = new ArrayList<RiigiAdminYksuseLiikDAO>();
 		
-		Connection conn = DriverManager.getConnection("jdbc:hsqldb:file:" + db_path + ";shutdown=true");
+		Connection conn = DriverManager.getConnection(db_path);
 
 		Statement stmt = null;
 		ResultSet rset = null;
