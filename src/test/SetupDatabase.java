@@ -61,7 +61,9 @@ public class SetupDatabase extends HttpServlet {
 															  "voimalik_alluv_liik_id INTEGER NOT NULL," +
 															  "kommentaar LONGVARCHAR NOT NULL," +
 															  "avatud DATE NOT NULL," +
-															  "muudetud DATE NOT NULL)");
+															  "muudetud DATE NOT NULL," +
+															  "FOREIGN KEY (riigi_admin_yksuse_liik_id, voimalik_alluv_liik_id)" +
+															  "REFERENCES riigi_admin_yksuse_liik(riigi_admin_yksuse_liik_id))");
 			
 			// RIIGI_ADMIN_YKSUS - ainult kasutatavad väljad
 			stmt.executeUpdate("CREATE TABLE riigi_admin_yksus (riigi_admin_yksus_id IDENTITY," +
@@ -72,7 +74,9 @@ public class SetupDatabase extends HttpServlet {
 															   "kuni DATE NOT NULL," +
 															   "avatud DATE NOT NULL," +
 															   "muudetud DATE NOT NULL," +
-															   "riigi_admin_yksuse_liik_id INTEGER NOT NULL)");
+															   "riigi_admin_yksuse_liik_id INTEGER NOT NULL," +
+															   "FOREIGN KEY (riigi_admin_yksuse_liik_id)" +
+															   "REFERENCES riigi_admin_yksuse_liik(riigi_admin_yksuse_liik_id))");
 			
 			// ADMIN_ALLUVUS - ainult kasutatavad väljad
 			stmt.executeUpdate("CREATE TABLE admin_alluvus (admin_alluvus_id IDENTITY," +
@@ -82,7 +86,9 @@ public class SetupDatabase extends HttpServlet {
 														   "kuni DATE NOT NULL," +
 														   "kommentaar LONGVARCHAR NOT NULL," +
 														   "avatud DATE NOT NULL," +
-														   "muudetud DATE NOT NULL)");
+														   "muudetud DATE NOT NULL," +
+														   "FOREIGN KEY (ylemus_yksus_id, alluv_yksus_id)" +
+														   "REFERENCES riigi_admin_yksus(riigi_admin_yksus_id))");
 
 		} finally {
 			DbUtils.closeQuietly(stmt);
