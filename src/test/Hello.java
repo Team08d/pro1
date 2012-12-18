@@ -31,7 +31,7 @@ public class Hello extends HttpServlet {
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().print("<h1>Hello world!!</h1>");
+		response.getWriter().print("<h1>Hello world!!!</h1>");
 		
 		// andmete pärimise test
 		List<RiigiAdminYksuseLiikDAO> riigiAdminYksuseLiikDAOs = null;
